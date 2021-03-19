@@ -1,24 +1,24 @@
 import React from 'react';
 import './styles.css';
 
-const Card = ({props}) => {
+const Card = ({name, age, gender, balance, src}) => {
     return(
         <div>
             <ul>
                 <li>
-                    <span>{props.name}</span>
+                    <span>{name}</span>
                 </li>
                 <li>
-                    <span>{props.age}</span>
+                    <span>{age}</span>
                 </li>
                 <li>
-                    <span>{props.gender}</span>
+                    <span>{gender}</span>
                 </li>
                 <li>
-                    <span>{props.balance}</span>
+                    <span>{balance}</span>
                 </li>
             </ul>
-            <img src={props.src} alt=""/>
+            <img src={src} alt=""/>
         </div>
     )
 }
