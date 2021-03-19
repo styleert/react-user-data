@@ -9,10 +9,12 @@ function App() {
 
     function onHeaderFieldChange(e) {
         let inputData = e.target.value;
-        let filteredData = userListData.filter((item) => item.name === inputData);
-        console.log(filteredData);
+        let filteredData = userListData.filter((item) => {
+            // search in item.name for inputData
+            return item.name.split(inputData).length > 1;
+        });
 
-        if(filteredData.length >= 1) {
+        if(filteredData.length >= 1 && inputData.length !== 0) {
             setUserListData(filteredData);
         } else {
             setUserListData(userData);
